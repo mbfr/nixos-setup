@@ -1,6 +1,13 @@
 # Installing
 
-Sets up a gnome-based desktop with vim config, intellij tied to 2022.2, wayland, rootless docker
+Sets up a gnome-based desktop with
+- neovim with my vim config + nvim-treesitter
+- intellij tied to 2022.2 to prevent annoying autoupgrades
+- wayland + nvidia drivers
+- rootless docker
+- falcon sensor
+- encrypted root with zfs
+- no annoying extra gnome programs like gnome-weather
 
 Before starting:
 

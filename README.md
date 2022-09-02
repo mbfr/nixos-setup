@@ -30,7 +30,7 @@ Before starting:
 
 1. Put a '}' at the end of /mnt/etc/nixos/zfs.nix (normally put there by the instructions, but we skipped the last few steps)
 
-1. Copy files from https://gitlab.com/michaelboulton/dotfiles/-/tree/nixos/other into /mnt/etc/nixos
+1. Copy files from this repo into /mnt/etc/nixos
 
         rsync -av /path/to/repo/*.nix /mnt/etc/nixos/
 

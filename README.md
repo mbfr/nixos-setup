@@ -63,3 +63,5 @@ Do this post-installation/reboot
 ### TODO
 
 Save falcon cid in nix store with https://github.com/Mic92/sops-nix or something like that
+
+Swap isnt automounted

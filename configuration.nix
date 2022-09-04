@@ -18,12 +18,19 @@
       # ./nvidia-offload.nix
       # uncomment/modify to enable falcon scanner
       # ./falcon.nix
+      # Fixes keychrom keys
+      ./keychron.nix
     ];
+
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 262144;
+  };
 
   environment.sessionVariables = rec {
        SDL_VIDEODRIVER = "wayland";
        QT_QPA_PLATFORM = "wayland";
        _JAVA_AWT_WM_NONREPARENTING = "1";
+       NIXOS_OZONE_WL = "1";
        MOZ_ENABLE_WAYLAND = "1";
 
        GDK_BACKEND = "wayland,x11";
@@ -113,11 +120,6 @@
   virtualisation.docker.rootless.setSocketVariable = true;
   virtualisation.docker.rootless.daemon.settings = { dns = [ "1.1.1.1" "4.4.4.4" "8.8.8.8" "9.9.9.9" "2001:4860:4860::8888" "2001:4860:4860::4444" ]; };
 
-  # Fixes keychron keyboard f-keys
-  boot.initrd.services.udev.rules = ''
-  ACTION=="add", ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="0250", RUN+="/home/michael/.dotfiles/other/enable-keys-keychron.sh"
-  '';
-
   # Start gpg agent at boot with yubikey support (if you want)
   programs.gnupg.dirmngr.enable = true;
   programs.gnupg.agent.enable = true;
@@ -146,7 +148,7 @@
       sublime3
       firefox
       git-lfs
-      chromium
+      google-chrome
       alacritty
       pinentry-gnome
       gnome.gnome-tweaks
@@ -156,6 +158,7 @@
       ripgrep-all
       gnupg
       nodejs-16_x
+      rustup
 
       bazelisk
       maven
@@ -165,6 +168,8 @@
       kubectl
       kustomize
       kubectx
+      bazel-buildtools
+      sublime3
 
       (python310.withPackages(ps: [
         ps.mypy

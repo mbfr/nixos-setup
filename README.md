@@ -55,9 +55,18 @@ Before starting:
    1. `mkswap <swap-partition>`
    2. Add swap device to hardware-configuration.nix `swapDevices = [ { device = "/<swap-partition>"; } ];`
 
-## Enabling falcon
+## Post installation/reboot
 
-Do this post-installation/reboot
+### gvm
+
+Install gvm from https://github.com/moovweb/gvm
+
+```
+nix-shell -p go
+gvm install go1.18.3
+```
+
+### Enabling falcon
 
 1. Move falcon deb to /opt/CrowdStrike (get from https://forgerock.slack.com/archives/CAVDE5K5M/p1660576127565849)
 

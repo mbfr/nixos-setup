@@ -66,6 +66,14 @@ nix-shell -p go
 gvm install go1.18.3
 ```
 
+### tree sitter
+
+Open vim and run
+
+```
+:TSUpdate
+```
+
 ### Enabling falcon
 
 1. Move falcon deb to /opt/CrowdStrike (get from https://forgerock.slack.com/archives/CAVDE5K5M/p1660576127565849)
@@ -79,3 +87,5 @@ gvm install go1.18.3
 Save falcon cid in nix store with https://github.com/Mic92/sops-nix or something like that
 
 Add vscode + extension - nix-env-selector
+
+Re-run tsupdate all the time in vim

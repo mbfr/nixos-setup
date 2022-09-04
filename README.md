@@ -50,6 +50,8 @@ Before starting:
         sync
         zpool export -a
 
+1. Set swap device as actual swap `mkswap <swap-partition>`
+
 ## Enabling falcon
 
 Do this post-installation/reboot

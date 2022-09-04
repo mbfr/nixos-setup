@@ -78,4 +78,4 @@ gvm install go1.18.3
 
 Save falcon cid in nix store with https://github.com/Mic92/sops-nix or something like that
 
-Add vscode + extension
+Add vscode + extension - nix-env-selector

@@ -57,6 +57,12 @@ Before starting:
 
 ## Post installation/reboot
 
+### Keys
+
+- Load in gpg keys 
+- Load in ssh-keys
+- ssh-add keys to gpg agent
+
 ### gvm
 
 Install gvm from https://github.com/moovweb/gvm
